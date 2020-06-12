@@ -150,10 +150,10 @@ def main():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-url', default='seek')
-    parser.add_argument('-feilds', default= ['mechatronics-engineering'])
+    parser.add_argument('-feilds', default= ['mechatronics-engineering'], nargs= "+")
     parser.add_argument('-location', default='All-Australia')
     parser.add_argument('-pages', default='50')
-    parser.add_argument('-ignore', default= ["senior", "intern", "contract", "staff"])
+    parser.add_argument('-ignore', default= ["senior", "intern", "contract", "staff"], nargs= "+")
     parser.add_argument('-citizen', default= False)
     option = parser.parse_args()
     main()
