@@ -1,10 +1,30 @@
+import os
 import argparse
+try:
+    import requests
+except ImportError:
+    os.system('pip install requests')
 import requests
+try:
+    import bs4
+except ImportError:
+    os.system('pip install beautifulsoup4')
 from bs4 import BeautifulSoup
 import json
-import math
 import re
+try:
+    import progressbar
+except ImportError:
+    os.system('pip install progressbar2')
+
+try:
+    import pandas
+except ImportError:
+    os.system('pip install pandas')
 import pandas as pd 
+import progressbar
+progressbar.streams.flush()
+
 
 def load_url(link, job, location):
     if option.url == 'seek':
@@ -116,7 +136,9 @@ def main():
             link = url
             dest = []
             no_dest = []
+            bar = progressbar.ProgressBar(max_value=pages)
             while i <= pages:
+                bar.update(i)
                 page = requests.get(link)
                 soup = BeautifulSoup(page.content, "html.parser")
                 job_soup = soup.find_all("div", {"data-search-sol-meta":True})
