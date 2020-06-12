@@ -100,8 +100,6 @@ def flatten(x):
     return(result)
         
 
-    
-
 def main():
     for feild in option.feilds:
         if option.url == 'seek':
@@ -156,8 +154,6 @@ if __name__ == "__main__":
     parser.add_argument('-location', default='All-Australia')
     parser.add_argument('-pages', default='50')
     parser.add_argument('-ignore', default= ["senior", "intern", "contract", "staff"])
-    #parser.add_argument('-years', default=)
     parser.add_argument('-citizen', default= False)
     option = parser.parse_args()
-    #print(rem('Senior Business Analyst'))
     main()
