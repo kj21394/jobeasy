@@ -12,5 +12,5 @@
 ### citizen - if want data of jobs for require candidate to be a citizen (take True or False as the argument)
 ### To run: 
 ```python
-python jobs.py -url 'seek' -feilds 'engineer', 'data-analyst', 'software-engineer' -location 'All-Australia' -pages '50' -ignore 'senior','internship', 'part-time' -citizen False
+python jobs.py -url seek -feilds engineer data-analyst software-engineer -location All-Australia -pages 50 -ignore senior internship part-time -citizen False
 ```
